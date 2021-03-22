@@ -18,14 +18,17 @@
             </div>
         </header>
         <main>
-            <article>
-                <h2>article_1</h2>
-                <p>aaaaaaaaa</p>
-            </article>
-            <article>
-                <h2>article_2</h2>
-                <p>aaaaaaaaa</p>
-            </article>
+        　　<div class='posts'>
+        　　    @foreach($posts as $post)
+               <div class='post'>
+                   <h2 class='title'>{{ $post->title }}</h2>
+                   <p class='body'>{{ $post->body }}</p>
+               </div>
+              @endforeach
+        　　</div>
+        　　<div class='paginate'>
+        　　     {{ $posts->links() }}
+        　　</div>
         </main>
     </body>
 </html>
