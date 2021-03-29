@@ -28,6 +28,7 @@
                  <p class='body'>{{ $post->body }}</p>
               </div>
               <div>
+                  <p class='edit'><a href='/posts/{{$post->id}}/edit'>edit</p>
                   <a href='/'>Article list</a>
               </div>       
             </div>
