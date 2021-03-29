@@ -15,5 +15,10 @@
 //     return view('index');
 // });
 
+use App\Http\Controllers\PostController;
+
 Route::get('/','PostController@index');
+Route::get('/posts/create', 'PostController@create');
+Route::post('/posts', 'PostController@store');
 Route::get('/posts/{post}', 'PostController@show');
+
