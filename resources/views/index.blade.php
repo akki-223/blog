@@ -24,6 +24,12 @@
                    <h2 class='title'><a href="/posts/{{ $post->id}}">{{ $post->title }}</a></h2>
                    <p class='body'>{{ $post->body }}</p>
                </div>
+               <form action='/posts/{{ $post->id }}' id='form_delete' method='POST' style='display:inline'>
+                @csrf
+                @method('DELETE')
+                 <input type='submit' style='display:none'></button>
+                 <p class='delete'>[<span onclick='return deletePost(this);'>delete</span>]</p>
+               </form>
               @endforeach
         　　</div>
         　　<div class='paginate'>
@@ -32,6 +38,13 @@
         　　<div>
         　　  <a href='/posts/create'>create</a>
         　　</div>
+        　　<script>
+                 function deletePost(e){
+                     if(confirm('削除していいですか')){
+                         document.getElementById('form_delete').submit();
+                     }
+                 }
+            </script>
         </main>
     </body>
 </html>
